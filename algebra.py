@@ -14,11 +14,12 @@ def expand_expression(expression, var=symbols("x")):
     """
     return expand(expression, var)
 
-def zeros(function, var=symbols("x")):
-    """Finds the set of all numbers x (real or complex) such that (x, 0) is an
-    element of the function f.
+def zeros(expression, var=symbols("x")):
+    """Finds the (possibly parametarized) set of all numbers x (real or complex) such
+    that for every value in that set, the expression evaluates to zero.
 
-    Example: if f(x) = x**3 - x**2 + x - 1,  then return [1, -I, I]
+    Example: if given x**3 - x**2 + x - 1, then assume x**3 - x**2 + x - 1 == 0. Therefore return [1, -I, I]
+    Example: if given x + y, then assume x + y == 0. Therefore return [-y]
     """
     return solve(function, var)
 
@@ -26,6 +27,7 @@ def solve_eq(lhs, rhs, var=symbols("x")):
     """Finds the (possibly parameterized) set of all numbers x (real or complex) such
     that the given equation is true.
 
+    Example: if x**3 == 1, then return [1, -1/2 + I*sqrt(3)/2, -1/2 + I*sqrt(3)/2]
     Example: if y == x**2, then return [-sqrt(y), sqrt(y)]
     """
     return solve(Eq(lhs, rhs), var)

@@ -1,21 +1,22 @@
 from sympy import RealNumber, Rational, Integer, Abs
 
-
-
 def exact(real_num):
     """Returns a rational representation of the floating point number.
     """
     return Rational(str(real_num)) # cast to string to preserve precision
     
+
 def approx(rational_num):
     """Returns an approximation of the rational number.
     """
     return rational_num.evalf()
 
+
 def abs(real_num):
     """Returns the absolute value of the number
     """
     return Abs(real_num)
+
 
 def round_num(real_num, digits=0):
     """Rounds the number to the specified number of digits. Will 

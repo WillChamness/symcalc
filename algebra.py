@@ -7,12 +7,14 @@ def factor_expression(expression, var=symbols("x")):
     """
     return factor(expression, var)
 
+
 def expand_expression(expression, var=symbols("x")):
     """"Expands the product of polynomial expressions.
     
     Example: '(x+1)*(x**2+x+1)' will return 'x**3 + 2*x**2 + 2*x + 1'
     """
     return expand(expression, var)
+
 
 def zeros(expression, var=symbols("x")):
     """Finds the (possibly parametarized) set of all numbers x (real or complex) such
@@ -23,6 +25,7 @@ def zeros(expression, var=symbols("x")):
     """
     return solve(function, var)
 
+
 def solve_eq(lhs, rhs, var=symbols("x")):
     """Finds the (possibly parameterized) set of all numbers x (real or complex) such
     that the given equation is true.
@@ -32,6 +35,14 @@ def solve_eq(lhs, rhs, var=symbols("x")):
     """
     return solve(Eq(lhs, rhs), var)
     
+def print_menu():
+    from calc import __valid_input__
+    menu = """(1) back
+    \r(2) factor
+    \r(3) expand
+    \r(4) zeros
+    \r(5) solve""" 
+
 
 
 if __name__ == "__main__":

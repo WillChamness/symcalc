@@ -35,20 +35,16 @@ def solve_eq(lhs, rhs, var=symbols("x")):
     """
     return solve(Eq(lhs, rhs), var)
     
-def print_menu():
-    from calc import __valid_input__
-    menu = """(1) back
-    \r(2) factor
-    \r(3) expand
-    \r(4) zeros
-    \r(5) solve""" 
 
 
-
-if __name__ == "__main__":
+def main():
     x = symbols("x")
     y = symbols("y")
     print(factor_expression(x**2 - 3*x + 2, x))
     print(expand_expression((x-2)*(x-1), x))
     print(zeros(x + y, x))
     print(solve_eq(2*x**3, 1/2, x))
+    
+
+if __name__ == "__main__":
+    main()
